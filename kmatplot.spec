@@ -1,8 +1,8 @@
 Summary:	KMatplot is a gnuplot-like tool for plotting data sets
 Summary(pl):	KMatplot to podobne do gnuplota narzêdzie do rysowania wykresów
 Name:		kmatplot
-Version:	1
-Release:	0.3
+Version:	0.3
+Release:	1
 License:	GPL
 Vendor:		kamil <kamildobk@poczta.onet.pl>
 Group:		X11/Applications/Science
