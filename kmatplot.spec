@@ -9,6 +9,7 @@ Group:		X11/Applications/Science
 Source0:	http://kmatplot.sourceforge.net/%{name}-%{version}.tar.gz
 Patch0:		%{name}-plugin.patch
 URL:		http://kmatplot.sourceforge.net/
+BuildRequires:	octave-devel
 BuildRequires:	qt-devel >= 3.0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
