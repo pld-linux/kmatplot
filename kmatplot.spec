@@ -1,4 +1,5 @@
 Summary:	KMatplot is a gnuplot-like tool for plotting data sets
+Summary(pl):	KMatplot to podobne do gnuplota narzêdzie do rysowania wykresów
 Name:		kmatplot
 Version:	1
 Release:	0.3
@@ -7,8 +8,8 @@ Vendor:		kamil <kamildobk@poczta.onet.pl>
 Group:		X11/Applications/Science
 Group(de):	X11/Applikationen/Wissenschaft
 Group(pl):	X11/Aplikacje/Nauka
+Source0:	http://kmatplot.sourceforge.net/%{name}-%{version}.tar.gz
 URL:		http://kmatplot.sourceforge.net/
-Source0:	%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -26,7 +27,21 @@ more clickable, so easier to use for unexperienced users. It can be
 used instead of Gnuplot with Octave and Scilab - there are new dll
 functions installed in those packages, which communicate with KMatplot
 through an Unix socket. Those functions are named 'kplot', 'kimage',
-kmesh', ... and are similar to those found in Octave by default.
+kmesh',... and are similar to those found in Octave by default.
+
+%description -l pl
+KMatplot to podobne do gnuplota narzêdzie do rysowania wykresów
+zarówno w dwóch jak i trzech wymiarach. Mo¿e rysowaæ zwyk³e rodzaje
+wykresów 2D, w tym bitmapy i kontury, oraz powierzchnie 3D. Oferuje
+pe³ny tryb WYSIWYG z wieloma obiektami lub pojedyncz± stron±.
+
+W przeciwieñstwie do Gnuplota, KMatplot nie ma jêzyka skryptowego, ale
+jest bardziej klikalny, wiêc ³atwiejszy w u¿yciu dla niedo¶wiadczonych
+u¿ytkowników. Mo¿e byæ u¿ywany zamiast Gnuplota z Octave lub Scilabem
+- do tych pakietów s± instalowane nowe funkcje biblioteczne, które
+komunikuj± siê z KMatplotem przez gniazdko lokalne. Te funkcje
+nazywaj± siê "kplot", "kimage", "kmesh"... i s± podobne do tych, które
+standardowo znajduj± siê w Octave.
 
 %prep
 %setup -q
