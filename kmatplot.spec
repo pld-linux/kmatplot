@@ -12,6 +12,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
+%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 KMatplot is a gnuplot-like tool for plotting data sets in either two
@@ -45,7 +46,16 @@ standardowo znajduj± siê w Octave.
 %setup -q
 
 %build
-%config
+kde_htmldir="%{_htmldir}"; export kde_htmldir
+kde_icondir="%{_pixmapsdir}"; export kde_icondir
+%configure2_13
+
+touch aclocal.m4 configure.in configure stamp-h.in Makefile.in \
+	kmatplot/Makefile.in kmatplot/formula/Makefile.in \
+	kmatplot/widgets/Makefile.in kmatplot/dialogs/Makefile.in \
+	kmatplot/part/Makefile.in kmatplot/demos/Makefile.in \
+	kmatplot/interface/Makefile.in
+
 %{__make}
 
 %install
@@ -54,13 +64,21 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-cd $RPM_BUILD_ROOT
-find . -type d | sed '1,2d;s,^\.,\%attr(-\,root\,root) \%dir ,' > $RPM_BUILD_DIR/file.list.kmatplot
-find . -type f | sed 's,^\.,\%attr(-\,root\,root) ,' >> $RPM_BUILD_DIR/file.list.kmatplot
-find . -type l | sed 's,^\.,\%attr(-\,root\,root) ,' >> $RPM_BUILD_DIR/file.list.kmatplot
+mv -f $RPM_BUILD_ROOT%{_applnkdir}/{Applications,Scientific}
+
+%find_lang %{name} --with-kde --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f ../file.list.kmatplot
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
+%files -f %{name}.lang
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%{_datadir}/apps/kmatplot
+%{_datadir}/mimelnk/application/x-kmatplot.desktop
+%{_applnkdir}/Scientific/kmatplot.desktop
+%{_pixmapsdir}/*/*/apps/*
