@@ -24,6 +24,7 @@
  int main( int argc, char ** argv ) {
      QApplication a( argc, argv );
 -    QApplication::setStyle( new QMotifPlusStyle() );
++#include <qlibrary.h>
 +    QLibrary resolve( QMotifPlusStyle );
  
      QMainWindow *mw = new QMainWindow();
