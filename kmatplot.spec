@@ -9,6 +9,7 @@ Group:		X11/Applications/Science
 Source0:	http://kmatplot.sourceforge.net/%{name}-%{version}.tar.gz
 URL:		http://kmatplot.sourceforge.net/
 BuildRequires:	kdelibs-devel
+BuildRequires:	qt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -67,8 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_applnkdir}/{Applications,Scientific}
 
-gzip -9nf AUTHORS ChangeLog
-
 %find_lang %{name} --with-kde --all-name
 
 %clean
@@ -79,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_datadir}/apps/kmatplot
