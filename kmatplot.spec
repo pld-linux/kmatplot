@@ -1,15 +1,14 @@
 Summary:	KMatplot is a gnuplot-like tool for plotting data sets
 Summary(pl):	KMatplot to podobne do gnuplota narzêdzie do rysowania wykresów
 Name:		kmatplot
-Version:	0.3
+Version:	0.4
 Release:	1
 License:	GPL
 Vendor:		kamil <kamildobk@poczta.onet.pl>
 Group:		X11/Applications/Science
 Source0:	http://kmatplot.sourceforge.net/%{name}-%{version}.tar.gz
 URL:		http://kmatplot.sourceforge.net/
-BuildRequires:	kdelibs-devel
-BuildRequires:	qt-devel
+BuildRequires:	qt-devel >= 3.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -50,13 +49,8 @@ standardowo znajduj± siê w Octave.
 %build
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 kde_icondir="%{_pixmapsdir}"; export kde_icondir
+QTDIR="%{_prefix}"; export QTDIR
 %configure2_13
-
-touch aclocal.m4 configure.in configure stamp-h.in Makefile.in \
-	kmatplot/Makefile.in kmatplot/formula/Makefile.in \
-	kmatplot/widgets/Makefile.in kmatplot/dialogs/Makefile.in \
-	kmatplot/part/Makefile.in kmatplot/demos/Makefile.in \
-	kmatplot/interface/Makefile.in
 
 %{__make}
 
