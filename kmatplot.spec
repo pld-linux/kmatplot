@@ -12,6 +12,7 @@ Patch0:		%{name}-plugin.patch
 URL:		http://kmatplot.sourceforge.net/
 BuildRequires:	octave-devel
 BuildRequires:	qt-devel >= 3.0.5
+BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
@@ -49,8 +50,6 @@ standardowo znajduj± siê w Octave.
 %patch0 -p1
 
 %build
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
 QTDIR="%{_prefix}"; export QTDIR
 %configure2_13
 
@@ -61,6 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+	kde_htmldir=%{_kdedocdir}
 
 mv -f $RPM_BUILD_ROOT%{_applnkdir}/{Applications,Scientific}
 
