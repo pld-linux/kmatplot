@@ -6,8 +6,6 @@ Release:	1
 License:	GPL
 Vendor:		kamil <kamildobk@poczta.onet.pl>
 Group:		X11/Applications/Science
-Group(de):	X11/Applikationen/Wissenschaft
-Group(pl):	X11/Aplikacje/Nauka
 Source0:	http://kmatplot.sourceforge.net/%{name}-%{version}.tar.gz
 URL:		http://kmatplot.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
