@@ -7,6 +7,7 @@ License:	GPL
 Vendor:		kamil <kamildobk@poczta.onet.pl>
 Group:		X11/Applications/Science
 Source0:	http://kmatplot.sourceforge.net/%{name}-%{version}.tar.gz
+# Source0-md5:	d5cd9bdddb2d3fc7ed359f409d61c7a7
 Patch0:		%{name}-plugin.patch
 URL:		http://kmatplot.sourceforge.net/
 BuildRequires:	octave-devel
