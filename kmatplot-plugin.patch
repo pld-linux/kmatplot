@@ -1,0 +1,30 @@
+--- ./kmatplot/demos/demo2d.cpp.org	Mon Mar 11 04:20:00 2002
++++ ./kmatplot/demos/demo2d.cpp	Mon Sep  2 03:07:45 2002
+@@ -3,6 +3,7 @@
+ #include <qapplication.h>
+ #include <qmainwindow.h>
+ #include <qmotifplusstyle.h>
++#include <qlibrary.h>
+ 
+ /** see ../widgets dir */
+ #include "qsplotview.h"
+@@ -24,7 +25,7 @@
+ 
+ int main( int argc, char ** argv ) {
+     QApplication a( argc, argv );
+-    QApplication::setStyle( new QMotifPlusStyle() );
++    QLibrary resolve( QMotifPlusStyle );
+ 
+     QMainWindow *mw = new QMainWindow();
+     mw->setCaption( "plot2d demo" );
+--- ./kmatplot/demos/demo3d.cpp.org	Mon Mar 11 04:25:24 2002
++++ ./kmatplot/demos/demo3d.cpp	Mon Sep  2 03:08:30 2002
+@@ -30,7 +30,7 @@
+ 
+ int main( int argc, char ** argv ) {
+     QApplication a( argc, argv );
+-    QApplication::setStyle( new QMotifPlusStyle() );
++    QLibrary resolve( QMotifPlusStyle );
+ 
+     QMainWindow *mw = new QMainWindow();
+ 
