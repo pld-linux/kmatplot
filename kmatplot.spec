@@ -7,8 +7,9 @@ License:	GPL
 Vendor:		kamil <kamildobk@poczta.onet.pl>
 Group:		X11/Applications/Science
 Source0:	http://kmatplot.sourceforge.net/%{name}-%{version}.tar.gz
+Patch0:		%{name}-plugin.patch
 URL:		http://kmatplot.sourceforge.net/
-BuildRequires:	qt-devel >= 3.0.1
+BuildRequires:	qt-devel >= 3.0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -45,6 +46,7 @@ standardowo znajduj± siê w Octave.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 kde_htmldir="%{_htmldir}"; export kde_htmldir
