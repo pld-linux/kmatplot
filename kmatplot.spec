@@ -15,8 +15,6 @@ BuildRequires:	qt-devel >= 3.0.5
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_htmldir	/usr/share/doc/kde/HTML
-
 %description
 KMatplot is a gnuplot-like tool for plotting data sets in either two
 or three dimensions. It can plot many ordinary types of 2d plots,
