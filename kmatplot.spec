@@ -57,9 +57,10 @@ QTDIR="%{_prefix}"; export QTDIR
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
+# XXX: fix location, add Categories if needed
 mv -f $RPM_BUILD_ROOT%{_applnkdir}/{Applications,Scientific}
 
 %find_lang %{name} --with-kde --all-name
@@ -77,5 +78,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_datadir}/apps/kmatplot
 %{_datadir}/mimelnk/application/x-kmatplot.desktop
-%{_applnkdir}/Scientific/kmatplot.desktop
-%{_pixmapsdir}/*/*/apps/*
+%{_desktopdir}/kmatplot.desktop
+%{_iconsdir}/*/*/apps/*
