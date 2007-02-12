@@ -1,5 +1,5 @@
 Summary:	KMatplot is a gnuplot-like tool for plotting data sets
-Summary(pl):	KMatplot to podobne do gnuplota narzêdzie do rysowania wykresów
+Summary(pl.UTF-8):   KMatplot to podobne do gnuplota narzÄ™dzie do rysowania wykresÃ³w
 Name:		kmatplot
 Version:	0.4
 Release:	1
@@ -29,19 +29,19 @@ functions installed in those packages, which communicate with KMatplot
 through an Unix socket. Those functions are named 'kplot', 'kimage',
 kmesh',... and are similar to those found in Octave by default.
 
-%description -l pl
-KMatplot to podobne do gnuplota narzêdzie do rysowania wykresów
-zarówno w dwóch jak i trzech wymiarach. Mo¿e rysowaæ zwyk³e rodzaje
-wykresów 2D, w tym bitmapy i kontury, oraz powierzchnie 3D. Oferuje
-pe³ny tryb WYSIWYG z wieloma obiektami lub pojedyncz± stron±.
+%description -l pl.UTF-8
+KMatplot to podobne do gnuplota narzÄ™dzie do rysowania wykresÃ³w
+zarÃ³wno w dwÃ³ch jak i trzech wymiarach. MoÅ¼e rysowaÄ‡ zwykÅ‚e rodzaje
+wykresÃ³w 2D, w tym bitmapy i kontury, oraz powierzchnie 3D. Oferuje
+peÅ‚ny tryb WYSIWYG z wieloma obiektami lub pojedynczÄ… stronÄ….
 
-W przeciwieñstwie do Gnuplota, KMatplot nie ma jêzyka skryptowego, ale
-jest bardziej klikalny, wiêc ³atwiejszy w u¿yciu dla niedo¶wiadczonych
-u¿ytkowników. Mo¿e byæ u¿ywany zamiast Gnuplota z Octave lub Scilabem
-- do tych pakietów s± instalowane nowe funkcje biblioteczne, które
-komunikuj± siê z KMatplotem przez gniazdko lokalne. Te funkcje
-nazywaj± siê "kplot", "kimage", "kmesh"... i s± podobne do tych, które
-standardowo znajduj± siê w Octave.
+W przeciwieÅ„stwie do Gnuplota, KMatplot nie ma jÄ™zyka skryptowego, ale
+jest bardziej klikalny, wiÄ™c Å‚atwiejszy w uÅ¼yciu dla niedoÅ›wiadczonych
+uÅ¼ytkownikÃ³w. MoÅ¼e byÄ‡ uÅ¼ywany zamiast Gnuplota z Octave lub Scilabem
+- do tych pakietÃ³w sÄ… instalowane nowe funkcje biblioteczne, ktÃ³re
+komunikujÄ… siÄ™ z KMatplotem przez gniazdko lokalne. Te funkcje
+nazywajÄ… siÄ™ "kplot", "kimage", "kmesh"... i sÄ… podobne do tych, ktÃ³re
+standardowo znajdujÄ… siÄ™ w Octave.
 
 %prep
 %setup -q
