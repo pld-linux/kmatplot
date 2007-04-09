@@ -11,7 +11,7 @@ Source0:	http://kmatplot.sourceforge.net/%{name}-%{version}.tar.gz
 Patch0:		%{name}-plugin.patch
 URL:		http://kmatplot.sourceforge.net/
 BuildRequires:	octave-devel
-BuildRequires:	qt-devel >= 3.0.5
+BuildRequires:	qt-devel >= 6:3.0.5
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
